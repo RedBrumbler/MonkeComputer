@@ -5,7 +5,7 @@
   "author": "RedBrumbler",
   "version": "1.5.2",
   "packageId": "com.AnotherAxiom.GorillaTag",
-  "packageVersion": "1.0.11",
+  "packageVersion": "1.1.0",
   "type": "Gameplay",
   "description": "A library that adds the possibility to add a custom computer\nNeeds an activating mod to work",
   "isLibrary": true,
@@ -24,12 +24,12 @@
   ],
   "modFiles": [],
   "libraryFiles": [
-    "libbeatsaber-hook_2_2_5.so",
+    "libbeatsaber-hook_2_3_2.so",
     "libcustom-types.so",
-    "libquest-cosmetic-loader_0_2_2.so",
+    "libquest-cosmetic-loader_0_2_3.so",
     "libzip.so",
     "libmonkecomputer.so",
-    "libbeatsaber-hook_2_2_4.so"
+    "libbeatsaber-hook_2_3_0.so"
   ],
   "fileCopies": [
     {

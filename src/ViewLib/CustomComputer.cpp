@@ -148,14 +148,32 @@ namespace GorillaUI
         // hijack the original keys
         Array<GlobalNamespace::GorillaKeyboardButton*>* buttons = this->GetComponentsInChildren<GlobalNamespace::GorillaKeyboardButton*>();
         int length = buttons->Length();
+
         for (int i = 0; i < length; i++)
         {
             GlobalNamespace::GorillaKeyboardButton* button = buttons->values[i];
             Il2CppString* characterString = button->characterString;
             std::string cppString = characterString ? to_utf8(csstrtostr(characterString)) : "";
+            getLogger().info("Getting key %s", cppString.c_str());
             cppString = toLower(cppString);
             EKeyboardKey key;
-            if (!NameToKey(cppString, key)) continue;
+
+            if (!NameToKey(cppString, key)) 
+            {
+                getLogger().info("NameToKey for %s failed", cppString.c_str());
+                continue;
+            }
+            // The actual text for the keys was moved in the heirachy, move it back so that it moves with keys
+            std::string buttonName = to_utf8(csstrtostr(button->get_name()));
+
+            for (int pos = buttonName.find(' '); pos != std::string::npos; pos = buttonName.find(' '))
+            {
+                buttonName.replace(pos, 1, "");
+            }
+
+            auto buttonText = button->get_transform()->get_parent()->get_parent()->Find(il2cpp_utils::newcsstr(string_format("Text/%s", toLower(buttonName).c_str())));
+            if (buttonText) buttonText->SetParent(button->get_transform());
+
             GameObject* gameObject = button->get_gameObject();
             GorillaUI::Components::GorillaKeyboardButton* customButton = gameObject->AddComponent<GorillaUI::Components::GorillaKeyboardButton*>();
 

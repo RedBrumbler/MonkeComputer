@@ -40,9 +40,8 @@ namespace GorillaUI::Components
     void GorillaKeyboardButton::Init(GorillaUI::CustomComputer* computer, EKeyboardKey key, std::string text)
     {
         this->Init(computer, key);
-
         UI::Text* textComponent = get_gameObject()->GetComponentInChildren<UI::Text*>();
-        textComponent->set_text(il2cpp_utils::createcsstr(text));
+        textComponent->set_text(il2cpp_utils::newcsstr(text));
     }
 
     void GorillaKeyboardButton::Init(GorillaUI::CustomComputer* computer, EKeyboardKey key, std::string text, Color buttonColor)

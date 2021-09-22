@@ -4,7 +4,7 @@
   "info": {
     "name": "MonkeComputer",
     "id": "monkecomputer",
-    "version": "1.5.2",
+    "version": "1.6.2",
     "url": "https://github.com/RedBrumbler/MonkeComputer",
     "additionalData": {
       "overrideSoName": "libmonkecomputer.so",

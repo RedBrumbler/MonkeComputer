@@ -78,9 +78,9 @@ $modJson.version = $qpmJson.info.version
 # add the thing to the libs list because we don't need it as a mod file
 $libs += ,$modlib[0]
 
-echo "adding extra lib beatsaber hook to library"
-$libs += "libbeatsaber-hook_2_2_4.so"
-$fileList += "./extern/libbeatsaber-hook_2_2_4.so"
+#echo "adding extra lib beatsaber hook to library"
+#$libs += "libbeatsaber-hook_2_2_4.so"
+#$fileList += "./extern/libbeatsaber-hook_2_2_4.so"
 
 #$modJson.modFiles = $modlib
 $modJson.libraryFiles = $libs
